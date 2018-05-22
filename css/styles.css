@@ -176,7 +176,9 @@ form h1{
 #button,#inputNombre{
     height: 2.5em;
     font-size: 16px;
-    border-radius: 0.3em;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0.3em;
+            border-radius: 0.3em;
     border-style: solid;
     border-color: black;
 }
