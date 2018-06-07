@@ -257,6 +257,20 @@ main{
             transform: rotate(720deg) scale(1.2,1.2);
 }
 
+.efectoLatido{
+    animation: latido 1s;
+    -webkit-animation: latido 1s;
+    -moz-animation: latido 1s;
+    animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes latido { 
+    0% {background-color: #FB0303}
+    100%{background-color: #A50202} 
+}
+
 #mainRanking{
     width: 80%;
     margin: auto;
@@ -429,32 +443,13 @@ table td{
 #sectionLoco section {
    height: 4em;
    width: 4em;
-   top: -0.4em;
+   top: -0.1em;
    left: -5.5em;
    border:none;
 }
 
 #sectionLoco section p {
    font-size: 0.55em;
-}
-
-.efectoLatido{
-    animation: latido 1s;
-    -webkit-animation: latido 1s;
-    -moz-animation: latido 1s;
-    animation-iteration-count:infinite;
-    -webkit-animation-iteration-count:infinite;
-    -moz-animation-iteration-count:infinite;
-}
-
-@-webkit-keyframes latido { 
-    0% {background-color: #FB0303}
-    100%{background-color: #A50202} 
-}
-
-@keyframes latido { 
-    0% {background-color: #FB0303}
-    100%{background-color: #A50202} 
 }
 
 #mainRanking{
@@ -587,25 +582,6 @@ table td{
    font-size: 0.55em;
 }
 
-.efectoLatido{
-    animation: latido 1s;
-    -webkit-animation: latido 1s;
-    -moz-animation: latido 1s;
-    animation-iteration-count:infinite;
-    -webkit-animation-iteration-count:infinite;
-    -moz-animation-iteration-count:infinite;
-    }
-
-@-webkit-keyframes latido { 
-    0% {background-color: #FB0303}
-    100%{background-color: #A50202} 
-}
-
-@keyframes latido { 
-    0% {background-color: #FB0303}
-    100%{background-color: #A50202} 
-}
-
 #mainRanking{
     width: 95%;
 }
@@ -715,25 +691,6 @@ table td{
    top: 10em;
    left: -16em;
    border:none;
-}
-
-.efectoLatido{
-    animation: latido 1s;
-    -webkit-animation: latido 1s;
-    -moz-animation: latido 1s;
-    animation-iteration-count:infinite;
-    -webkit-animation-iteration-count:infinite;
-    -moz-animation-iteration-count:infinite;
-}
-
-@-webkit-keyframes latido { 
-    0% {background-color: #FB0303}
-    100%{background-color: #A50202} 
-}
-
-@keyframes latido { 
-    0% {background-color: #FB0303}
-    100%{background-color: #A50202} 
 }
 
 .swal-modal{
