@@ -224,7 +224,7 @@ main{
    position: relative; 
    height: 6em;
    width: 6em;
-   border: 1px solid #f00;
+   border: none;
    top: 7em;
    left: -25em;
    background:#FE2E2E;
@@ -445,7 +445,6 @@ table td{
    width: 4em;
    top: 2em;
    left: -5.5em;
-   border:none;
    margin-bottom: em;
 }
 
@@ -576,7 +575,6 @@ table td{
    width: 4em;
    top: 1em;
    left: -12em;
-   border: none
 }
 
 #sectionLoco section p {
@@ -691,7 +689,6 @@ table td{
 #sectionLoco section {
    top: 10em;
    left: -16em;
-   border:none;
 }
 
 .swal-modal{
