@@ -443,10 +443,10 @@ table td{
 #sectionLoco section {
    height: 4em;
    width: 4em;
-   top: -0.1em;
+   top: 0.5em;
    left: -5.5em;
    border:none;
-   margin-bottom: 3em;
+   margin-bottom: 5em;
 }
 
 #sectionLoco section p {
