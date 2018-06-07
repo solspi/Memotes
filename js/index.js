@@ -1,11 +1,11 @@
 var objetoJson;
 
-$('#sectionLoco').on('click',function(e){
+$('#sectionLoco').on('touchstart click',function(e){
 	window.location.href = 'ranking.html';//Redirección a la pantalla del Ranking 
 });
 
 
-$('#button').on('click',function(e){
+$('#button').on('touchstart click',function(e){
 
 	let inputNombre=$('#inputNombre').val();
 	let inputNivel=$('#select').val();
