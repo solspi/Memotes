@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="shortcut icon" href="img/icon.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">	
 	<title>Inicio</title>
@@ -11,9 +12,23 @@
 	<main id="mainIndex">
 		<form id="form">
 			<h1>memotest</h1>
-			<input id="inputNombre" autocomplete="off" placeholder="Tu nombre" type="text"/>
-			<input id="button" type="button" value="Guardar"/>
+			<section id="formDatos">
+				<input id="inputNombre" autocomplete="off" placeholder="Tu nombre" type="text"/>
+			    <select name="select" id="select">
+			    	<option class="colorGray" value="">Elige un Nivel</option>
+      				<option value="Facil">Fácil</option>
+      				<option value="Intermedio">Intermedio</option>
+      				<option value="Experto">Experto</option>
+    			</select>
+			    <input id="button" type="button" value="Guardar"/>
+			</section>
+			<h3 id="mjeObligatorio"></h3>
 		</form>
+		<section id="sectionLoco" >
+			<section class="efectoLatido">
+				<p>Ranking de Puntuaciones</p>
+			</section>
+		</section>
 	</main>
 	<script type="text/javascript" src="js/jQuery.js"></script>
 	<script type="text/javascript" src="js/sweetAlert.js"></script>

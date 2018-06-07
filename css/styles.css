@@ -148,47 +148,154 @@ main{
     display: inline-block;  
     font-size: 1.5em;
     letter-spacing: 0.1em;
-}
-
-.fuenteRoja{
     color: #FE2E2E;
 }
 
-#mainIndex{     
+#mainIndex{ 
+    -webkit-box-orient: vertical; 
+    -webkit-box-direction: normal; 
+        -ms-flex-direction: column; 
+            flex-direction: column;    
     -webkit-box-pack: center;       
         -ms-flex-pack: center;      
             justify-content: center;
 }
 
-#form{
-    font-family: 'starwars',sans-serif;
+#form{  
     width: 100%;
-    height: auto;
     text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+                -ms-grid-row-align: center;
+            align-items: center;
 }
 
-form h1{
-    font-size: 5em;
-    padding: 0.3em;
+#form h1{
+    font-family: 'starwars',sans-serif;
+    font-size: 6.2em;
+    padding: 0.1em;
     color: #FFFE0E;
 }
 
-#button,#inputNombre{
+#formDatos{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.colorGray{
+    color:#BDBDBD;
+}
+
+#mjeObligatorio{
+    height: 2em;
+    text-align: center;
+    padding: 0.5em;
+    font-family:'Rajdhani', sans-serif;
+    color: #FE2E2E;  
+}
+
+#button,#inputNombre,#select{
     height: 2.5em;
     font-size: 16px;
-    -webkit-border-radius: 0.3em;
-            border-radius: 0.3em;
-    border-style: solid;
-    border-color: black;
+    border-radius: 0.3em;
+    border: 1px solid black;
+    margin: 0 0.5em;
 }
 
 #inputNombre{
-    width: 20em;
-    padding: 0 0.5em;
+    width: 14em;
+    padding: 0 0.8em;
+}
+
+#select{
+    width: 10em;
+    padding: 0 0.8em;
 }
 
 #button{
     width: 7em;
+}
+
+#sectionLoco section{
+   position: relative; 
+   height: 6em;
+   width: 6em;
+   border: 1px solid #f00;
+   top: 7em;
+   left: -25em;
+   background:#FE2E2E;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center; 
+   -webkit-transition: all 1s ease-in-out; 
+   transition: all 1s ease-in-out;
+   border-radius: 50%;
+}
+
+#sectionLoco section p {
+    text-align: center;
+    color: #FFFE0E;
+    font-family:'Rajdhani', sans-serif;
+    font-weight:bold;
+    -webkit-transform:rotate(-20deg);
+            transform:rotate(-20deg);
+    font-size: 0.85em;
+}
+
+#sectionLoco section:hover{
+    -webkit-transform: rotate(720deg) scale(1.2,1.2);
+            transform: rotate(720deg) scale(1.2,1.2);
+}
+
+#mainRanking{
+    width: 80%;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+#mainRanking h1{
+    font-size: 2.3em;
+    color:#FFFE0E;
+    margin:1em;
+    margin-top: 1.8em;
+    font-family: 'starwars', sans-serif;
+    text-align: center;
+}
+
+table #encabezado td{
+    color: #FE2E2E;
+}
+
+table td{
+    text-align: center;
+    font-size: 1.8em;
+    color:#BDBDBD;
+    font-family:'Rajdhani', sans-serif;  
+    padding:0.15em 1em;
+}
+
+#mainRanking a{
+    text-decoration:none;
+    font-family:'Rajdhani', sans-serif; 
+    font-size: 1.2em;
+    color: #FFFE0E;
+    margin: 3em;
 }
 
 .swal-modal{
@@ -207,7 +314,7 @@ form h1{
 
 .swal-text,.swal-title{
    color:#FFFE0E;
-   font-family:'Rajdhani', sans-serif;;
+   font-family:'Rajdhani', sans-serif;
    font-weight: bold;
    font-size: 22px;
    letter-spacing: 0.3em;
@@ -218,7 +325,6 @@ form h1{
 .swal-title{
    font-size: 35px;
 }
-
 
 @media screen and (min-width: 320px) and (max-width:720px) and (max-aspect-ratio: 13/9) {
 
@@ -289,7 +395,7 @@ form h1{
     letter-spacing: 0em;
 }
 
-form{
+#form, #formDatos{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -302,41 +408,92 @@ form{
             align-items: center;
 }
 
-form h1{
-    font-size: 2.9em;
+#form h1{
+    font-size: 3.3em;
+    margin-bottom: 0.3em;
+}
+
+#mjeObligatorio{
+    font-size: 14px;  
+}
+
+#inputNombre,#button,#select{
+    height: 2.3em;
+    width: 12em;
 }
 
 #inputNombre,#button{
-    height: 2.3em;
+    margin:0.4em 0;
 }
 
-#inputNombre{
-    width: 12em;
-    margin:0.4em;
+#sectionLoco section {
+   height: 4em;
+   width: 4em;
+   top: 4em;
+   left: -5em;
+   border:none;
 }
 
-#button{
-    width: 12em;
+#sectionLoco section p {
+   font-size: 0.55em;
+}
+
+.efectoLatido{
+    animation: latido 1s;
+    -webkit-animation: latido 1s;
+    -moz-animation: latido 1s;
+    animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes latido { 
+    0% {background-color: #FB0303}
+    100%{background-color: #A50202} 
+}
+
+@keyframes latido { 
+    0% {background-color: #FB0303}
+    100%{background-color: #A50202} 
+}
+
+#mainRanking{
+    width: 90%;
+}
+
+#mainRanking h1{
+    font-size: 1.6em;
+    margin:0.8em;
+    margin-top: 1.5em;
+}
+
+table td{
+    font-size: 1.3em; 
+    padding:0.1em 0.5em;
+}
+
+#mainRanking a{
+    font-size: 1em;
+    margin: 2em 0 3em 1;    
 }
 
 .swal-modal {
-  border: 3px solid #BDBDBD; 
+    border: 3px solid #BDBDBD; 
 }
 
 .swal-button {
-  width: 7em;
-  font-size: 13px;
+    width: 7em;
+    font-size: 13px;
 }
 
 .swal-text,.swal-title {
- font-size: 15px;
- padding-bottom: 0.3em; 
+    font-size: 15px;
+    padding-bottom: 0.3em; 
 }
 
 .swal-title {
-font-size: 25px;
+    font-size: 25px;
 }
-
 }
 
 @media screen and (min-width: 320px) and (max-width: 720px)  and (min-aspect-ratio: 13/9){
@@ -388,45 +545,108 @@ font-size: 25px;
     letter-spacing: 0em;
 }
 
-form h1{
-    font-size: 3.9em;
+#form h1{
+    font-size: 4.2em;
     padding: 0; 
 }
 
-#inputNombre,#button{
+#mjeObligatorio{
+    font-size: 14.5px;  
+}
+
+#inputNombre,#button,#select{
     height: 2.3em;
+    font-size: 14px;
 }
 
 #inputNombre{
-    width: 14em;
-    margin:0.3em 0;
+    width: 11em;
 }
 
 #button{
     width: 6em;
 }
 
+#select{
+    width: 8.5em;
+}
+
+#select,#inpuNombre{
+    padding: 0 0.4em;
+}
+
+#sectionLoco section {
+   height: 4em;
+   width: 4em;
+   top: 1em;
+   left: -12em;
+   border: none
+}
+
+#sectionLoco section p {
+   font-size: 0.55em;
+}
+
+.efectoLatido{
+    animation: latido 1s;
+    -webkit-animation: latido 1s;
+    -moz-animation: latido 1s;
+    animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+    }
+
+@-webkit-keyframes latido { 
+    0% {background-color: #FB0303}
+    100%{background-color: #A50202} 
+}
+
+@keyframes latido { 
+    0% {background-color: #FB0303}
+    100%{background-color: #A50202} 
+}
+
+#mainRanking{
+    width: 95%;
+}
+
+#mainRanking h1{
+    font-size: 1.8em;
+    margin:0.9em;
+    margin-top: 1.5em;
+}
+
+table td{
+    font-size: 1.5em; 
+    padding:0.1em 0.8em;
+}
+
+#mainRanking a{
+    font-size: 1em;
+    margin: 2em 0 3em 0;   
+}
+
 .swal-modal {
-  border: 3px solid #BDBDBD; 
+    border: 3px solid #BDBDBD; 
 }
 
 .swal-button {
-  width: 7em;
-  font-size: 13px;
+    width: 7em;
+    font-size: 13px;
 }
 
 .swal-text,.swal-title {
- font-size: 15px;
- padding-bottom: 0.3em; 
+    font-size: 15px;
+    padding-bottom: 0.3em; 
 }
 
 .swal-title {
-font-size: 25px;
+    font-size: 25px;
 }
-
 }
 
 @media screen and (min-width: 721px) and (max-width: 1024px) and (orientation:portrait) {
+
 #mainJuego{
     width: 100%;
     padding:0 1em;
@@ -442,18 +662,22 @@ font-size: 25px;
                 -ms-grid-row-align: center;
             align-items: center;
 }
+
 #memo{
     -webkit-box-ordinal-group:3;
         -ms-flex-order:2;
             order:2;
 }
+
 .linea{
     -ms-flex-pack: distribute;
         justify-content: space-around;
 }
+
 .linea figure img{
     border-width: 2px;
 }
+
 #info{
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -470,31 +694,61 @@ font-size: 25px;
     margin: 3em auto;
     margin-bottom: 2em;
 }
+
 #info figure{
     width:15em; 
 }
+
 #info h1{
     font-size: 2em; 
 }
+
 #info h2{   
     font-size: 1.7em;
 }
-#inputNombre{
-    width: 16em;
-}
+
 #button{
     width: 6em;
 }
+
+#sectionLoco section {
+   top: 10em;
+   left: -16em;
+   border:none;
+}
+
+.efectoLatido{
+    animation: latido 1s;
+    -webkit-animation: latido 1s;
+    -moz-animation: latido 1s;
+    animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes latido { 
+    0% {background-color: #FB0303}
+    100%{background-color: #A50202} 
+}
+
+@keyframes latido { 
+    0% {background-color: #FB0303}
+    100%{background-color: #A50202} 
+}
+
 .swal-modal{
     border: 4px solid #BDBDBD; 
 }
+
 .swal-button{
     font-size: 13px;
 }
+
 .swal-text,.swal-title{
     font-size: 21px;
     padding-bottom: 0.5em; 
 }
+
 .swal-title{
     font-size: 28px;
 }

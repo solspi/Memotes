@@ -1,8 +1,25 @@
-var contenidoLocalStorage=JSON.parse(localStorage.getItem('padawan'));
+var contenidoLocalStoragePadawan=JSON.parse(localStorage.getItem('padawan'));
+var nivelSeleccionado=contenidoLocalStoragePadawan.nivel;
 var arregloPrincipal=[1,2,3,4,5,6,1,2,3,4,5,6];
-var anterior; var aciertos=0; var intentos=24; var contClick=0;
+var anterior; var aciertos=0; var intentosResguardo; var intentos; var jugadas;
 
-$('#nombre').html(contenidoLocalStorage.nombre);
+
+//Se asigna número de intentos según el valor seleccionado del select de index.js(complejidad)
+switch (nivelSeleccionado){
+	case 'Facil': intentos=18;
+	break;
+	case 'Intermedio': intentos=12;
+	break;
+	default: intentos=8;
+}
+
+intentosResguardo=intentos;//resguardo para no perder el valor en la cuenta regresiva
+
+
+//Para mostrar en pantalla los valores ingresados en el formulario de index.js
+$('#nombre').html(contenidoLocalStoragePadawan.nombre);
+$('#complejidad').html(nivelSeleccionado)
+$('#intentos').html(intentos);
 
 /*
 *Función para mezclar los elementos de un arreglo.
@@ -52,9 +69,6 @@ function match(elemento1,elemento2){
 		if (elemento1.data('name')!=elemento2.data('name')) {
 			return '1';
 		}
-		else{
-			return '2';	
-		}
 	}
 }
 
@@ -72,7 +86,7 @@ function mostrarSweetAlert(mensaje,boton1,boton2){
 					cancel: {
 					   text: boton1,value: false,visible: true,className: "",closeModal: true,
 					},
-					confirm: {
+					confirm : {
 					   text: boton2,value: true,visible: true,className: "",closeModal: true,
 					}
 			}
@@ -87,18 +101,46 @@ function mostrarSweetAlert(mensaje,boton1,boton2){
 }
 
 /*
-*Función que chequea si se alcanza el tope de intentos. Tambien si se consigue encontrar todos los pares de imgs.
+*Función para guarda los datos de una jugada en el localStorage
+*
+*/
+function guardarJugada(){
+	if(localStorage.getItem('jugadas')!=null){
+    	jugadas=JSON.parse(localStorage.getItem("jugadas")).jugadas;
+    } 
+	else{
+    	jugadas=[];
+	}
+
+	let intentosUsados=intentosResguardo-intentos;//para saber cuantos intentos se usaron
+	let jugada={nombre: contenidoLocalStoragePadawan.nombre, complejidad: nivelSeleccionado, intentosUsados: intentosUsados};
+
+	jugadas.push(jugada);   
+   
+   jsonJugadas={
+        'jugadas':jugadas,
+        'total':jugadas.length
+   }
+
+   let data=JSON.stringify(jsonJugadas);
+   localStorage.setItem('jugadas',data);
+	//localStorage.clear();
+	//console.log(localStorage.getItem('jugadas'))
+}
+
+/*
+*Función que chequea si se alcanza el tope de intentos. Tambien si se consigue encontrar todos los pares de imgs y si lo logra, guarda la jugada para generar ranking. 
 *
 */
 function controlar(){
 	
 	if (aciertos==6) {
+		guardarJugada();
 		mostrarSweetAlert('Lo has logrado, mi Padawan! Continuar entrenando?','Más tarde','Si');
- 	}
+	}
 	if (intentos==0 && aciertos!=6) {
 		mostrarSweetAlert('No lo has logrado, mi Padawan!! Esforzarte e intentar nuevamente debes.','Más tarde','Oki!');
 	}
-
 }
 
 /*
@@ -160,11 +202,11 @@ $('.front').on('click' , function(e){
 
 					$('#intentos').html(' '+intentos);
 				}	
-				setTimeout(girarParCartas, 1200, anterior, $(this).prev());
+				setTimeout(girarParCartas, 900, anterior, $(this).prev());
 			}
 			anterior=null;
+			setTimeout(controlar,1000); 
 		} 
-   		setTimeout(controlar,2000); 
    	}   	
 });
 

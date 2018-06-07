@@ -1,13 +1,20 @@
-let objetoJson;
+var objetoJson;
+
+$('#sectionLoco').on('click',function(e){
+	window.location.href = 'ranking.html';//Redirección a la pantalla del Ranking 
+});
+
 
 $('#button').on('click',function(e){
 
-	let input=$('#inputNombre').val();
+	let inputNombre=$('#inputNombre').val();
+	let inputNivel=$('#select').val();
 	
-	if (input!=''){
+	if (inputNombre!='' && inputNivel!=""){
 		
 		objetoJson={
-			'nombre': input,
+			'nombre': inputNombre,
+			'nivel': inputNivel
 		}
 
 		localStorage.setItem('padawan', JSON.stringify(objetoJson));
@@ -35,6 +42,11 @@ $('#button').on('click',function(e){
 				});
 	
 		$('#inputNombre').val('');
+		$('#speed').val('');
+		$('#mjeObligatorio').text('')
+	}
+	else{
+		$('#mjeObligatorio').html('*Ingresar tu nombre y seleccionar el nivel debes');
 	}
 });
 
